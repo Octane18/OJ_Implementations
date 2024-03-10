@@ -11,16 +11,19 @@ class Heap{
 private:
     int no_of_elements=0;
     int top=-1;
-    int heap[9999990]={0};
+    int* heap;
     int max;
 public:
     Heap(int N) {
+        heap = new int[N];
         max = N;
     }
     void Insert(int);
     int Pop();
 
-
+    ~Heap(){
+        delete [] heap;
+    }
 
 
 
